@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Overlock');
+
+body,
+html {
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     color: #C0C0C0;
+     background-color: rgba(59, 58, 58, 0.74);
+     overflow: auto;
+     height: 100%;
+     padding: 0;
+     margin: 0;
+     cursor: default;
+}
+
+:root {
+     --input-border-dark: #1E1E20;
+}
+
+body::-webkit-scrollbar-track {
+     box-shadow: inset 0 0 6px rgba(0,0,0,0.3);     
+     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+     background-color: rgba(59, 58, 58, 0.74);
+}
+
+body::-webkit-scrollbar {
+     width: 12px;
+     background-color: rgba(59, 58, 58, 0.74);
+}
+body::-webkit-scrollbar-thumb {
+     box-shadow: inset 0 0 6px rgba(0,0,0,0.3);     
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+     background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Titlebar Section -------------------- */
+
+.titleBar {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 25px;
+     background-color: rgb(48, 47, 47);
+     color: whitesmoke;
+     z-index: 999;
+}
+
+.titlebar-button {
+     -webkit-app-region: no-drag;
+     font-weight: 100;
+     float: left;
+     cursor: pointer;
+     margin: 3px 8px 0 5px;
+     position: relative;
+     z-index: 9999;
+}
+
+.tb-left,
+.tb-middle,
+.tb-right {
+     float: left;
+     height: 100%;
+     padding: 0;
+}
+
+.tb-middle, .tb-left {
+     user-select: none;
+     -webkit-user-select: none;
+     -webkit-app-region: drag;
+}
+
+.tb-right {
+     float: right;
+     cursor: pointer;
+}
+
+.emptyDiv { float: left; }
+
+.tb-min,
+.tb-exit {
+     height: 100%;
+     cursor: pointer;
+     text-align: center;
+     float: right;
+}
+
+.tb-right .tb-min:hover {
+     background-color: rgba(173, 216, 230, .5);
+}
+
+.tb-right .tb-exit:hover {
+     background-color: red;
+}
+
+/* Main Section -------------------- */
+
+.main {
+     position: relative;
+     width: 98%;
+     margin: 35px auto 0;
+}
+
+/* Heading ---------- */
+.heading h1 {
+     font-size: 3rem;
+     margin-top: -10px;
+}
+
+/* Input ---------- */
+.input { width: 100%; }
+
+input.txtGoal {
+     position: relative;
+     left: 24px;
+     height: 30px;
+     padding: 5px 19px 5px 8px;
+     border-top: var(--input-border-dark) 1.5px solid;
+     border-left: var(--input-border-dark) 1.5px solid;
+     border-bottom: var(--input-border-dark) 1.5px solid;
+     border-radius: 10px 0 0 10px;
+     width: 70%;
+}
+
+select.selType {
+     position: absolute;
+     height: 30px;
+     width: 29%;
+     border-top: var(--input-border-dark) 1.5px solid;
+     border-bottom: var(--input-border-dark) 1.5px solid;
+     border-right: var(--input-border-dark) 1.5px solid;
+     border-left: var(--input-border-dark) .9px solid;
+     border-radius: 0 10px 10px 0;
+     cursor: pointer;
+}
+.txtGoal,
+.selType {
+     color: #046380;
+}
+
+.txtGoal:focus,
+.selType:focus {
+     outline: 0;
+}
+
+/* Error Msg */
+.errorMsg { color: red; }
+
+hr { border-top: 1px solid rgba(0,0,0,.3); }
+
+/* Content ---------- */
+.content {
+     font-size: 12px;
+     width: 100%;
+     position: relative;
+     left: 15px;
+}
+
+.entry {
+     width: 96%;
+     margin: 0 auto 10px;
+     border: 1.4px solid rgba(0,0,0,.7);
+     /* height: 170px; */
+     padding: 8px 3px;
+     border-radius: 4px;
+}
+
+/* -- top section -- */
+.top-section { margin-bottom: 10px; }
+.top-section div {
+     float: left;
+}
+
+.numOfGoals,
+.title,
+.actionBtns { padding: 0; }
+
+.numOfGoals {
+     /* background-color: #046380; */
+     text-align: left;     
+     padding-left: 8px;
+}
+.numOfGoals span { font-size: 16px; text-align: left; margin-right: 1px; }
+
+.title {
+     /* background-color: #DC3522; */
+     text-align: center;
+     margin-top: -5px;
+}
+.title span { font-size: 1.85rem; text-align: center; letter-spacing: .6px; }
+
+.actionBtns {
+     /* background-color: darkolivegreen; */
+     text-align: right;
+     padding-right: 8px; 
+}
+.actionBtns span { font-size: 13px; margin-left: 3px; cursor: pointer; }
+
+
+/* -- goal section -- */
+.goal-section { padding: 0 10px; font-size: 13px; margin-top: -14px; height: 110px; overflow-y: auto; }
+
+.goal-section::-webkit-scrollbar-track {
+     box-shadow: inset 0 0 6px rgba(0,0,0,0.3);     
+     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+     background-color: rgba(59, 58, 58, 0.74);
+}
+.goal-section::-webkit-scrollbar {
+     width: 12px;
+     background-color: rgba(59, 58, 58, 0.74);
+}
+.goal-section::-webkit-scrollbar-thumb {
+     box-shadow: inset 0 0 6px rgba(0,0,0,0.3);     
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+     background-color: rgba(255, 255, 255, 0.2);
+}
+.goal-check { 
+     cursor: pointer;
+     vertical-align: middle;
+     position: relative;
+     top: 1px;
+     overflow: hidden;
+     height: 14px;
+     width: 14px;
+     background-color: rgba(59, 58, 58, 0.74);
+}
+
+.my-goal { padding: 0; }
+.editing { padding: 0; }
+.editing span { cursor: pointer; font-size: 15px;}
+.edit { margin-right: 2px; }
+.my-goal-text { padding: 0; margin: 0; font-size: 15px; margin-left: -3px; position: relative; font-weight:lighter; vertical-align: bottom; }

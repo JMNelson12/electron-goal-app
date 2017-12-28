@@ -1,0 +1,21 @@
+{
+  "name": "goal-app",
+  "version": "0.0.1",
+  "main": "./app.js",
+  "scripts": {
+    "start": "gulp serve",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/increasing.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . --overwrite --asar --platform=win32 --arch=ia32 --icon=assets/icons/win/sunrise.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Goal App\"",
+    "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=assets/icons/png/increasing.png --prune=true --out=release-builds"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "electron": "^1.7.10",
+    "electron-connect": "^0.6.2",
+    "gulp": "^3.9.1",
+    "handlebars": "^4.0.11"
+  },
+  "devDependencies": {
+    "electron-packager": "^10.1.0"
+  }
+}

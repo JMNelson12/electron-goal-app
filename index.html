@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>List</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <script>
+    if (typeof module === 'object') {
+      window.module = module;
+      module = undefined;
+    }
+  </script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/notify.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
+  <script>
+    if (window.module) module = window.module;
+  </script>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- ============= Titlebar ============= -->
+    <div id="titleBar" class="titleBar">
+      <div class="tb-left col-3">
+        <!-- <div class="titlebar-button">
+          File
+        </div>
+        <div class="titlebar-button">
+          View
+        </div> -->
+      </div>
+
+      <div class="tb-middle col-6">
+        <!-- Drag Area -->
+      </div>
+
+      <div class="tb-right col-3">
+        <div class="emptyDiv"></div>
+        <div class="tb-exit col-6"> X </div>
+        <div class="tb-min col-6"> &#9866; </div>
+      </div>
+    </div>
+
+    <!-- ============= Main ============= -->
+    <div class="main">
+      <div class="row justify-content-center">
+        <!-- Heading -->
+        <div class="heading">
+          <h1>My Goals</h1>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <!-- Input/Select -->
+        <div class="input">
+          <input type="text" class="txtGoal" autofocus placeholder="Enter a goal...">
+          <select id="selType" class="selType">
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+            <option value="yearly">Yearly</option>
+            <option value="lifetime">Lifetime</option>
+          </select>
+        </div>
+        <div class="errorMsg"></div>
+      </div>
+
+      <hr>
+
+      <div class="row justify-content-center">
+        <!-- Content -->
+        <div class="content">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ================= Type Template ================= -->
+  <script id="entry-template" type="text/x-handlebars-template">
+    <div class="entry" id={{id}}>
+      <div class="top-section">
+        <div class="numOfGoals col-2 justify-content-left">
+          <span>{{numOfGoals}}</span> Left!
+        </div>
+        <div class="title col-8">
+          <span>{{title}} Goals</span>
+        </div>
+        <div class="actionBtns col-2">
+          <span class="remove">&#10007;</span>
+          <span class="min-section">&#9866;</span>
+        </div>
+      </div>
+      <br>
+      <hr style="clear: both;">
+      <div class="goal-section col-12"></div>
+    </div>
+  </script>
+  <!-- ================= End Type Template ================= -->
+  <!-- ================= Goal Template ================= -->
+  <script id="goal-template" type="text/x-handlebars-template">
+    <div class="my-goal col-12">
+      <span class="editing col-1">
+        <span class="edit">&#9998;</span>
+        <span class="check">&#9744;</span>
+        <span class="checkmark" style="display: none;">&#9745;</span>
+      </span>
+      &nbsp;
+      <span class="my-goal-text col-11">{{goal}}</span>
+    </div>
+  </script>
+  <!-- ================= End Goal Template ================= -->
+
+  <script>
+    // You can also require other files to run in this process
+    // require('./renderer.js');
+    require('electron-connect').client.create();
+  </script>
+</body>
+
+</html>
