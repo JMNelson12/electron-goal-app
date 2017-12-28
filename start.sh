@@ -1,2 +1,2 @@
-cd C:/Projects/Javascript/goals-app
+cd C:/Projects/Javascript/electron-goals-app
 npm start
